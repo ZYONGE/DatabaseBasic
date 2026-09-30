@@ -1,0 +1,19 @@
+desc DEPARTMENT;
+desc EMPLOYEE;
+
+select * from DEPARTMENT;
+select * from EMPLOYEE;
+
+CREATE TABLE PROJECT
+(
+    Projno NUMBER NOT NULL,
+    Projname CHAR(15) NOT NULL,
+    Budget NUMBER
+);
+
+desc PROJECT;
+
+ALTER TABLE PROJECT
+ADD Manager NUMBER;
+
+ALTER TABLE PROJECT DROP COLUMN Manager;

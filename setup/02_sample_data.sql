@@ -1,6 +1,6 @@
 -- ============================================================
--- sampledata.sql
--- userCreate.sql로 만든 사용자(KIM 등)로 접속해서 실행하는 스크립트.
+-- setup/02_sample_data.sql
+-- 01_create_user.sql로 만든 사용자(KIM 등)로 접속해서 실행하는 스크립트.
 -- 부서(DEPARTMENT)·사원(EMPLOYEE) 테이블과 기획부 사원 뷰(EMP_PLANNING)를 만든다.
 -- EMPLOYEE가 DEPARTMENT를 참조하므로 DEPARTMENT를 먼저 만들고 데이터를 넣어야 한다.
 -- ============================================================
@@ -59,7 +59,7 @@ INSERT INTO EMPLOYEE VALUES(1365, '김상원', '사원', 3426, 1500000, 1);
 -- EMPLOYEE(E)와 DEPARTMENT(D)를 부서번호(E.DNO = D.DEPTNO)로 조인한 뒤
 -- 부서이름이 '기획'인 행만 골라냄 → 결과: 이성래, 조민희, 김창섭
 -- 뷰는 데이터를 따로 저장하지 않고 조회할 때마다 이 SELECT를 실행한다.
--- (실행하려면 CREATE VIEW 권한이 필요 → userCreate.sql에서 부여)
+-- (실행하려면 CREATE VIEW 권한이 필요 → 01_create_user.sql에서 부여)
 CREATE VIEW EMP_PLANNING
 AS
 SELECT E.EMPNAME, E.TITLE, E.SALARY

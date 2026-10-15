@@ -1,5 +1,5 @@
 -- ============================================================
--- userCreate.sql
+-- setup/01_create_user.sql
 -- 관리자 계정(system 등)으로 접속해서 실행하는 스크립트.
 -- 실습용 사용자 KIM, LEE를 만들고 필요한 권한을 준다.
 -- ============================================================
@@ -20,7 +20,7 @@ CREATE USER LEE IDENTIFIED BY redsun
 --   connect        : 접속용 롤 (CREATE SESSION 포함)
 --   resource       : 테이블·시퀀스·프로시저 등 객체를 만들 수 있는 롤
 --   create session : DB에 로그인할 수 있는 시스템 권한 (connect에 이미 들어 있지만 명시적으로 한 번 더 부여)
---   create view    : 뷰 생성 권한. resource 롤에는 없어서 따로 줘야 sampledata.sql의 CREATE VIEW가 성공함
+--   create view    : 뷰 생성 권한. resource 롤에는 없어서 따로 줘야 02_sample_data.sql의 CREATE VIEW가 성공함
 -- 참고: Oracle 12c 이상에서는 resource 롤이 테이블스페이스 사용량(quota)을 주지 않는다.
 --       INSERT 시 ORA-01950 오류가 나면 아래처럼 quota를 추가로 부여한다.
 --       ALTER USER KIM QUOTA UNLIMITED ON users;
